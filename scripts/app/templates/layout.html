@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{tituloPagina}}</title>
+  <!-- Incluye la biblioteca Plotly (reemplaza con la ruta correcta si la descargaste) -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #66c2a5;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .sidebar {
+      background-color: #ccebc5;
+      width: 200px;
+      padding: 20px;
+    }
+
+    .graficos {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Estilos para las opciones en la barra lateral */
+    .opcion {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #a1d99b;
+      color: white;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .opcion:hover {
+      background-color: #31a354;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    {{tituloPagina}}
+  </header>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <a href="index.html" class="opcion">Inicio</a>
+      <a href="analisis.html" class="opcion">Análisis</a>
+      <a href="contacto.html" class="opcion">Contacto</a>
+      <!-- Agrega más opciones según sea necesario -->
+    </div>
+
+    <!-- Contenedor principal para los gráficos -->
+    <div class="graficos">
+      <!-- Aquí se incluirá el contenido específico de cada sección -->
+      {{contenidoEspecifico}}
+    </div>
+  </div>
+
+  <script>
+    // Resto del código JavaScript para la creación de gráficos (no se ha modificado)
+    const datosGrafico1 = { /* ... */ };
+    const datosGrafico2 = { /* ... */ };
+    const datosGrafico3 = { /* ... */ };
+    const layout = { /* ... */ };
+    Plotly.newPlot('grafico1', [datosGrafico1], layout);
+    Plotly.newPlot('grafico2', [datosGrafico2], layout);
+    Plotly.newPlot('grafico3', [datosGrafico3], layout);
+  </script>
+</body>
+</html>
